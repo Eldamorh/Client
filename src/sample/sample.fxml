@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutY="2.0" prefHeight="347.0" prefWidth="143.0">
+         <children>
+            <Button id="insert" fx:id="insert" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="100.0" text="Добавить" />
+            <Button id="delete" fx:id="delete" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="100.0" text="Удалить" />
+            <Button id="select" fx:id="select" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="100.0" text="Найти" />
+            <Button id="update" fx:id="update" layoutX="14.0" layoutY="160.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="100.0" text="Изменить" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tablePane" layoutX="143.0" layoutY="12.0" prefHeight="327.0" prefWidth="453.0" visible="false">
+         <children>
+            <TableView id="table" fx:id="table" layoutX="5.0" layoutY="4.0" prefHeight="319.0" prefWidth="444.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="164.0" text="Название" />
+                <TableColumn fx:id="authorColumn" prefWidth="128.0" text="Автор" />
+                  <TableColumn fx:id="yearColumn" prefWidth="31.0" text="Год" />
+                  <TableColumn fx:id="priceColumn" prefWidth="46.0" text="Цена" />
+                  <TableColumn fx:id="amountColumn" prefWidth="74.0" text="Количество" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="insertPane" layoutX="172.0" layoutY="2.0" prefHeight="347.0" prefWidth="414.0" visible="false">
+         <children>
+            <TextArea fx:id="nameOfBookInsert" layoutX="173.0" layoutY="14.0" prefHeight="43.0" prefWidth="200.0" />
+            <TextArea fx:id="authorInsert" layoutX="173.0" layoutY="71.0" prefHeight="43.0" prefWidth="200.0" />
+            <TextArea fx:id="yearInsert" layoutX="173.0" layoutY="129.0" prefHeight="43.0" prefWidth="200.0" />
+            <TextArea fx:id="priceInsert" layoutX="173.0" layoutY="186.0" prefHeight="43.0" prefWidth="200.0" />
+            <TextArea fx:id="amountInsert" layoutX="173.0" layoutY="243.0" prefHeight="43.0" prefWidth="200.0" />
+            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название книги" wrappingWidth="170.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Автор" wrappingWidth="170.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Год написания" wrappingWidth="170.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Цена" wrappingWidth="170.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Количество" wrappingWidth="170.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="addBookBtn" layoutX="181.0" layoutY="300.0" mnemonicParsing="false" text="Добавить" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="deletePane" layoutX="172.0" layoutY="12.0" prefHeight="312.0" prefWidth="414.0" visible="false">
+         <children>
+            <ComboBox fx:id="deleteBox" layoutX="207.0" layoutY="73.0" prefWidth="150.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:id="nameOfBookDelete" fx:value="Названию" />
+                     <String fx:id="authorDelete" fx:value="Автору" />
+                     <String fx:id="yearOfWritingDelete" fx:value="Году написания" />
+                     <String fx:id="priceDelete" fx:value="Цене" />
+                     <String fx:id="amountDelete" fx:value="Количеству" />
+                  </FXCollections>
+               </items>
+                    </ComboBox>
+            <Text layoutX="73.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Удалить по " wrappingWidth="100.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="deleteText" layoutX="73.0" layoutY="135.0" prefHeight="43.0" prefWidth="268.0" />
+            <Button fx:id="deleteAllBtn" layoutX="14.0" layoutY="273.0" mnemonicParsing="false" text="Удалить всю баззу данных" />
+            <Button fx:id="deleteBookBtn" layoutX="181.0" layoutY="207.0" mnemonicParsing="false" text="Удалить" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="updatePane" layoutX="172.0" layoutY="14.0" prefHeight="319.0" prefWidth="406.0" visible="false">
+         <children>
+            <Text layoutX="27.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Обновить все по ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="UpdateBox" layoutX="219.0" layoutY="86.0" prefWidth="150.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:id="nameOfBookUpdate" fx:value="Названию" />
+                     <String fx:id="authorUpdate" fx:value="Автору" />
+                     <String fx:id="yearOfWritingUpdate" fx:value="Году написания" />
+                     <String fx:id="priceUpdate" fx:value="Цене" />
+                     <String fx:id="amountUpdate" fx:value="Количеству" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <TextArea fx:id="updateText" layoutX="85.0" layoutY="175.0" prefHeight="43.0" prefWidth="268.0" />
+            <Button fx:id="updateBookBtn" layoutX="177.0" layoutY="256.0" mnemonicParsing="false" text="Обновить" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SelectPane" layoutX="176.0" layoutY="24.0" prefHeight="300.0" prefWidth="406.0">
+         <children>
+            <Button fx:id="selectAllBtn" layoutX="14.0" layoutY="261.0" mnemonicParsing="false" text="Показать всю баззу данных" />
+            <Text layoutX="61.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Найти книгу по">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="selectBox" layoutX="234.0" layoutY="60.0" prefWidth="150.0" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:id="nameOfBookSelect" fx:value="Названию" />
+                     <String fx:id="authorSelect" fx:value="Автору" />
+                     <String fx:id="yearOfWritingSelect" fx:value="Году написания" />
+                     <String fx:id="priceSelect" fx:value="Цене" />
+                     <String fx:id="amountSelect" fx:value="Количеству" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <TextArea fx:id="selectText" layoutX="69.0" layoutY="129.0" prefHeight="43.0" prefWidth="268.0" />
+            <Button fx:id="selectBookBtn" layoutX="177.0" layoutY="203.0" mnemonicParsing="false" text="Найти" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
